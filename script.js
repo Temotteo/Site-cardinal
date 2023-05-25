@@ -22,7 +22,6 @@ $(document).ready(function() {
   
 
 
-
   const images = document.querySelectorAll('.col-lg-3 img');
 for (let i = 0; i < images.length; i++) {
   images[i].addEventListener('click', function() {
