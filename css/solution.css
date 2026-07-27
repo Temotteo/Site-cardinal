@@ -572,6 +572,64 @@ margin-right: 100px;
   margin-bottom: 28px;
 }
 
+.management-menu {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 30px;
+}
+
+.management-menu-item {
+  background: #fff;
+  border: 1px solid #dde6e2;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(23, 32, 28, .06);
+  color: #17201c;
+  padding: 22px;
+  text-align: left;
+}
+
+.management-menu-item span,
+.management-menu-item strong {
+  display: block;
+}
+
+.management-menu-item span {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.management-menu-item strong {
+  color: #60716a;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.management-menu-item.active {
+  background: #17201c;
+  border-color: #17201c;
+  color: #fff;
+}
+
+.management-menu-item.active strong {
+  color: #cce5db;
+}
+
+.management-area {
+  scroll-margin-top: 24px;
+}
+
+.area-heading {
+  margin-bottom: 18px;
+}
+
+.area-heading h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
 .metric-card {
   min-height: 150px;
   padding: 24px;
@@ -604,6 +662,29 @@ margin-right: 100px;
   font-weight: 700;
 }
 
+.status-pill {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 10px;
+}
+
+.status-active {
+  background: #e4f8e9;
+  color: #177245;
+}
+
+.status-review {
+  background: #e7f2ff;
+  color: #135c9f;
+}
+
+.status-waiting {
+  background: #fff4da;
+  color: #8a5a00;
+}
+
 .cash-row {
   align-items: center;
   border-bottom: 1px solid #e6eeea;
@@ -621,6 +702,10 @@ margin-right: 100px;
   .dashboard-top {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .management-menu {
+    grid-template-columns: 1fr;
   }
 
   .manager-access {

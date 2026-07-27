@@ -27,7 +27,7 @@
           <div class="col-lg-6">
             <p class="finance-kicker">Area reservada</p>
             <h1>Login de gestores</h1>
-            <p class="finance-lead">Acesso ao resumo financeiro da Cardinal Systems para acompanhamento de receitas, despesas e fluxo de caixa.</p>
+            <p class="finance-lead">Acesso ao menu de gestao da Cardinal Systems, com acompanhamento de obras e informacao financeira da empresa.</p>
           </div>
           <div class="col-lg-5 ms-lg-auto">
             <form id="managerLoginForm" class="manager-card" novalidate>
@@ -41,7 +41,7 @@
                 <input type="password" class="form-control" id="managerPassword" minlength="4" required>
               </div>
               <p id="loginMessage" class="login-message" role="alert" aria-live="polite"></p>
-              <button type="submit" class="btn btn-primary w-100">Aceder ao financeiro</button>
+              <button type="submit" class="btn btn-primary w-100">Aceder a gestao</button>
             </form>
           </div>
         </div>
@@ -52,100 +52,196 @@
       <div class="container">
         <div class="dashboard-top">
           <div>
-            <p class="finance-kicker">Painel financeiro</p>
-            <h1 id="financeDashboardTitle">Resumo da empresa</h1>
+            <p class="finance-kicker">Painel de gestores</p>
+            <h1 id="financeDashboardTitle">Gestao da empresa</h1>
           </div>
           <button id="managerLogout" type="button" class="btn btn-outline-dark">Terminar sessao</button>
         </div>
 
-        <div class="row g-3 finance-metrics">
-          <div class="col-md-6 col-xl-3">
-            <article class="metric-card">
-              <span>Receita mensal</span>
-              <strong>1.250.000 MT</strong>
-              <small>+12% vs. mes anterior</small>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="metric-card">
-              <span>Despesas</span>
-              <strong>730.000 MT</strong>
-              <small>Operacao e fornecedores</small>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="metric-card">
-              <span>Resultado liquido</span>
-              <strong>520.000 MT</strong>
-              <small>Margem estimada 41,6%</small>
-            </article>
-          </div>
-          <div class="col-md-6 col-xl-3">
-            <article class="metric-card">
-              <span>Contas a receber</span>
-              <strong>390.000 MT</strong>
-              <small>3 clientes em aberto</small>
-            </article>
-          </div>
+        <div class="management-menu" role="tablist" aria-label="Areas de gestao">
+          <button type="button" class="management-menu-item active" data-area-target="worksArea" role="tab" aria-selected="true">
+            <span>Gestao de Obras</span>
+            <strong>Projetos, equipas e estado dos trabalhos</strong>
+          </button>
+          <button type="button" class="management-menu-item" data-area-target="financialArea" role="tab" aria-selected="false">
+            <span>Gestao Financeira</span>
+            <strong>Receitas, despesas e fluxo de caixa</strong>
+          </button>
         </div>
 
-        <div class="row g-4">
-          <div class="col-lg-7">
-            <section class="finance-panel">
-              <h2>Movimentos recentes</h2>
-              <div class="table-responsive">
-                <table class="table align-middle">
-                  <thead>
-                    <tr>
-                      <th>Data</th>
-                      <th>Descricao</th>
-                      <th>Categoria</th>
-                      <th class="text-end">Valor</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>24/07/2026</td>
-                      <td>Contrato de suporte IT</td>
-                      <td>Receita</td>
-                      <td class="text-end positive">+180.000 MT</td>
-                    </tr>
-                    <tr>
-                      <td>22/07/2026</td>
-                      <td>Licencas de software</td>
-                      <td>Despesa</td>
-                      <td class="text-end negative">-45.000 MT</td>
-                    </tr>
-                    <tr>
-                      <td>18/07/2026</td>
-                      <td>Instalacao de automacao</td>
-                      <td>Receita</td>
-                      <td class="text-end positive">+260.000 MT</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </section>
+        <section id="worksArea" class="management-area" aria-labelledby="worksAreaTitle">
+          <div class="area-heading">
+            <p class="finance-kicker">Gestao de obras</p>
+            <h2 id="worksAreaTitle">Resumo das obras</h2>
           </div>
 
-          <div class="col-lg-5">
-            <section class="finance-panel">
-              <h2>Fluxo de caixa</h2>
-              <div class="cash-row">
-                <span>Disponivel em caixa</span>
-                <strong>840.000 MT</strong>
-              </div>
-              <div class="cash-row">
-                <span>Pagamentos previstos</span>
-                <strong>210.000 MT</strong>
-              </div>
-              <div class="cash-row">
-                <span>Recebimentos previstos</span>
+          <div class="row g-3 finance-metrics">
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Obras ativas</span>
+                <strong>8</strong>
+                <small>3 em fase final</small>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Obras pendentes</span>
+                <strong>5</strong>
+                <small>Aguardam aprovacao ou material</small>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Equipas no terreno</span>
+                <strong>4</strong>
+                <small>Maputo e Matola</small>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Valor em execucao</span>
+                <strong>2.850.000 MT</strong>
+                <small>Contratos em curso</small>
+              </article>
+            </div>
+          </div>
+
+          <section class="finance-panel">
+            <h2>Obras em acompanhamento</h2>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th>Obra</th>
+                    <th>Cliente</th>
+                    <th>Responsavel</th>
+                    <th>Estado</th>
+                    <th class="text-end">Progresso</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Automacao residencial</td>
+                    <td>Cliente privado</td>
+                    <td>Equipa Tecnica 1</td>
+                    <td><span class="status-pill status-active">Em curso</span></td>
+                    <td class="text-end">72%</td>
+                  </tr>
+                  <tr>
+                    <td>Suporte IT mensal</td>
+                    <td>Petrogas</td>
+                    <td>Helpdesk</td>
+                    <td><span class="status-pill status-review">A validar</span></td>
+                    <td class="text-end">88%</td>
+                  </tr>
+                  <tr>
+                    <td>Rede e seguranca</td>
+                    <td>FNDS</td>
+                    <td>Equipa Tecnica 2</td>
+                    <td><span class="status-pill status-waiting">Pendente</span></td>
+                    <td class="text-end">35%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section id="financialArea" class="management-area d-none" aria-labelledby="financialAreaTitle">
+          <div class="area-heading">
+            <p class="finance-kicker">Gestao financeira</p>
+            <h2 id="financialAreaTitle">Resumo financeiro</h2>
+          </div>
+
+          <div class="row g-3 finance-metrics">
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Receita mensal</span>
+                <strong>1.250.000 MT</strong>
+                <small>+12% vs. mes anterior</small>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Despesas</span>
+                <strong>730.000 MT</strong>
+                <small>Operacao e fornecedores</small>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Resultado liquido</span>
+                <strong>520.000 MT</strong>
+                <small>Margem estimada 41,6%</small>
+              </article>
+            </div>
+            <div class="col-md-6 col-xl-3">
+              <article class="metric-card">
+                <span>Contas a receber</span>
                 <strong>390.000 MT</strong>
-              </div>
-            </section>
+                <small>3 clientes em aberto</small>
+              </article>
+            </div>
           </div>
-        </div>
+
+          <div class="row g-4">
+            <div class="col-lg-7">
+              <section class="finance-panel">
+                <h2>Movimentos recentes</h2>
+                <div class="table-responsive">
+                  <table class="table align-middle">
+                    <thead>
+                      <tr>
+                        <th>Data</th>
+                        <th>Descricao</th>
+                        <th>Categoria</th>
+                        <th class="text-end">Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>24/07/2026</td>
+                        <td>Contrato de suporte IT</td>
+                        <td>Receita</td>
+                        <td class="text-end positive">+180.000 MT</td>
+                      </tr>
+                      <tr>
+                        <td>22/07/2026</td>
+                        <td>Licencas de software</td>
+                        <td>Despesa</td>
+                        <td class="text-end negative">-45.000 MT</td>
+                      </tr>
+                      <tr>
+                        <td>18/07/2026</td>
+                        <td>Instalacao de automacao</td>
+                        <td>Receita</td>
+                        <td class="text-end positive">+260.000 MT</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+
+            <div class="col-lg-5">
+              <section class="finance-panel">
+                <h2>Fluxo de caixa</h2>
+                <div class="cash-row">
+                  <span>Disponivel em caixa</span>
+                  <strong>840.000 MT</strong>
+                </div>
+                <div class="cash-row">
+                  <span>Pagamentos previstos</span>
+                  <strong>210.000 MT</strong>
+                </div>
+                <div class="cash-row">
+                  <span>Recebimentos previstos</span>
+                  <strong>390.000 MT</strong>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
   </main>
