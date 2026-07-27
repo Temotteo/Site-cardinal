@@ -572,6 +572,41 @@ margin-right: 100px;
   margin-bottom: 28px;
 }
 
+.month-toolbar {
+  align-items: end;
+  background: #fff;
+  border: 1px solid #dde6e2;
+  border-radius: 8px;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  padding: 18px;
+}
+
+.month-toolbar label {
+  color: #60716a;
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.month-toolbar .form-select {
+  min-width: 260px;
+}
+
+.month-status,
+.monthly-observation {
+  color: #60716a;
+  margin-bottom: 0;
+}
+
+.monthly-observation {
+  line-height: 1.6;
+  margin-top: 18px;
+}
+
 .management-menu {
   display: grid;
   gap: 16px;
@@ -706,6 +741,15 @@ margin-right: 100px;
 
   .management-menu {
     grid-template-columns: 1fr;
+  }
+
+  .month-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .month-toolbar .form-select {
+    min-width: 100%;
   }
 
   .manager-access {

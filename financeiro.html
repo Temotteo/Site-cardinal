@@ -153,33 +153,41 @@
             <h2 id="financialAreaTitle">Resumo financeiro</h2>
           </div>
 
+          <div class="month-toolbar">
+            <div>
+              <label for="financialMonthSelect">Mes em analise</label>
+              <select id="financialMonthSelect" class="form-select"></select>
+            </div>
+            <p id="financialMonthStatus" class="month-status"></p>
+          </div>
+
           <div class="row g-3 finance-metrics">
             <div class="col-md-6 col-xl-3">
               <article class="metric-card">
-                <span>Receita mensal</span>
-                <strong>1.250.000 MT</strong>
-                <small>+12% vs. mes anterior</small>
+                <span>Total de documentos</span>
+                <strong id="monthDocumentsTotal">0 MT</strong>
+                <small id="monthDocumentsNote">Sem dados registados</small>
               </article>
             </div>
             <div class="col-md-6 col-xl-3">
               <article class="metric-card">
-                <span>Despesas</span>
-                <strong>730.000 MT</strong>
-                <small>Operacao e fornecedores</small>
+                <span>IVA dedutivel</span>
+                <strong id="monthDeductibleVat">0 MT</strong>
+                <small>Compras e despesas</small>
               </article>
             </div>
             <div class="col-md-6 col-xl-3">
               <article class="metric-card">
-                <span>Resultado liquido</span>
-                <strong>520.000 MT</strong>
-                <small>Margem estimada 41,6%</small>
+                <span>IVA liquidado</span>
+                <strong id="monthCollectedVat">0 MT</strong>
+                <small>Vendas/faturacao</small>
               </article>
             </div>
             <div class="col-md-6 col-xl-3">
               <article class="metric-card">
-                <span>Contas a receber</span>
-                <strong>390.000 MT</strong>
-                <small>3 clientes em aberto</small>
+                <span>Resultado IVA</span>
+                <strong id="monthVatToPay">0 MT</strong>
+                <small id="monthVatNote">Resultado do periodo</small>
               </article>
             </div>
           </div>
@@ -187,37 +195,18 @@
           <div class="row g-4">
             <div class="col-lg-7">
               <section class="finance-panel">
-                <h2>Movimentos recentes</h2>
+                <h2>Resumo por categoria</h2>
                 <div class="table-responsive">
                   <table class="table align-middle">
                     <thead>
                       <tr>
-                        <th>Data</th>
-                        <th>Descricao</th>
                         <th>Categoria</th>
-                        <th class="text-end">Valor</th>
+                        <th class="text-end">Liquido</th>
+                        <th class="text-end">IVA</th>
+                        <th class="text-end">Total</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td>24/07/2026</td>
-                        <td>Contrato de suporte IT</td>
-                        <td>Receita</td>
-                        <td class="text-end positive">+180.000 MT</td>
-                      </tr>
-                      <tr>
-                        <td>22/07/2026</td>
-                        <td>Licencas de software</td>
-                        <td>Despesa</td>
-                        <td class="text-end negative">-45.000 MT</td>
-                      </tr>
-                      <tr>
-                        <td>18/07/2026</td>
-                        <td>Instalacao de automacao</td>
-                        <td>Receita</td>
-                        <td class="text-end positive">+260.000 MT</td>
-                      </tr>
-                    </tbody>
+                    <tbody id="monthlyCategoryRows"></tbody>
                   </table>
                 </div>
               </section>
@@ -225,19 +214,24 @@
 
             <div class="col-lg-5">
               <section class="finance-panel">
-                <h2>Fluxo de caixa</h2>
+                <h2>Apuramento do IVA</h2>
                 <div class="cash-row">
-                  <span>Disponivel em caixa</span>
-                  <strong>840.000 MT</strong>
+                  <span>IVA dedutivel</span>
+                  <strong id="vatDeductibleDetail">0 MT</strong>
                 </div>
                 <div class="cash-row">
-                  <span>Pagamentos previstos</span>
-                  <strong>210.000 MT</strong>
+                  <span>IVA liquidado</span>
+                  <strong id="vatCollectedDetail">0 MT</strong>
                 </div>
                 <div class="cash-row">
-                  <span>Recebimentos previstos</span>
-                  <strong>390.000 MT</strong>
+                  <span>IVA a pagar</span>
+                  <strong id="vatPayableDetail">0 MT</strong>
                 </div>
+                <div class="cash-row">
+                  <span>Credito de imposto</span>
+                  <strong id="vatCreditDetail">0 MT</strong>
+                </div>
+                <p id="monthlyObservation" class="monthly-observation"></p>
               </section>
             </div>
           </div>
