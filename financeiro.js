@@ -26,7 +26,7 @@ const MANAGER_USERS = [
     email: 'admin@cardinalt.com',
     name: 'Administrador',
     salt: 'NqOiWGEEDu3sm5JZ1rdSLA==',
-    passwordHash: 'R/iecWSINYm4ivNZjnr9cBCiEZ4eIyAtX8olB7wdD84=',
+    passwordHash: 'dGzwE+sc2xMaECklAbKNcJ/WWb+qPybSbOqCYZmeLOw=',
   },
   {
     email: 'obras@cardinalt.com',
