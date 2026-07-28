@@ -607,6 +607,81 @@ margin-right: 100px;
   margin-top: 18px;
 }
 
+.monthly-sheet-panel {
+  margin-top: 26px;
+}
+
+.sheet-heading {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.sheet-heading p {
+  color: #60716a;
+  margin-bottom: 0;
+}
+
+.tax-sheet-wrap {
+  border: 1px solid #101816;
+  overflow-x: auto;
+}
+
+.tax-sheet-table {
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 1320px;
+  width: 100%;
+}
+
+.tax-sheet-table th,
+.tax-sheet-table td {
+  border: 1px solid #101816;
+  padding: 7px 8px;
+  vertical-align: middle;
+}
+
+.tax-sheet-table th {
+  background: #efefef;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.tax-sheet-table td:first-child {
+  background: #fff1c7;
+  font-weight: 800;
+}
+
+.sheet-number {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.sheet-section-row td {
+  background: #f6e8bd !important;
+  font-weight: 800;
+}
+
+.sheet-subtotal-row td {
+  background: #f4f4f4 !important;
+  font-weight: 800;
+}
+
+.sheet-tax-row td {
+  background: #d9d9d9 !important;
+  font-weight: 800;
+}
+
+.empty-sheet-cell {
+  background: #fff !important;
+  color: #60716a;
+  padding: 26px !important;
+  text-align: center;
+}
+
 .management-menu {
   display: grid;
   gap: 16px;

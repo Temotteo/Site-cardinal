@@ -8,6 +8,7 @@ const managementAreas = document.querySelectorAll('.management-area');
 const financialMonthSelect = document.querySelector('#financialMonthSelect');
 const financialMonthStatus = document.querySelector('#financialMonthStatus');
 const monthlyCategoryRows = document.querySelector('#monthlyCategoryRows');
+const monthlySheetRows = document.querySelector('#monthlySheetRows');
 const monthDocumentsTotal = document.querySelector('#monthDocumentsTotal');
 const monthDocumentsNote = document.querySelector('#monthDocumentsNote');
 const monthDeductibleVat = document.querySelector('#monthDeductibleVat');
@@ -58,6 +59,43 @@ const FINANCIAL_MONTHS = [
       { name: 'Activos tangiveis', net: 27164.66, vat: 4346.34, total: 31511.00 },
       { name: 'Liquidado', net: 81724.14, vat: 13075.86, total: 94800.00 },
     ],
+    sheetRows: [
+      { type: 'section', group: 'Inventario', label: 'Resumo de Movimentos 2025' },
+      { group: 'Inventario', date: '19/11/2025', doc: 'VD 30095', entity: 'CASA DE TECHLUS', net1: 5750.00, vat1: 920.00, total: 6670.00, expense: 'Material de Manutencao' },
+      { group: 'Inventario', date: '15/11/2025', doc: 'VD 003760', entity: 'INTERNATIONAL', net1: 23879.31, vat1: 3820.69, total: 27700.00, expense: 'Material de Manutencao' },
+      { group: 'Inventario', date: '18/11/2025', doc: 'VD 3932', entity: 'Panavision', net1: 32730.00, vat1: 5236.80, total: 37968.80, expense: 'Material de Manutencao' },
+      { group: 'Inventario', date: '26/11/2025', doc: 'VD 0004021', entity: 'Panavision', net1: 19410.00, vat1: 3105.60, total: 22515.60, expense: 'Material de Manutencao' },
+      { type: 'subtotal', group: 'Sub-total', net1: 81769.31, vat1: 13083.09, total: 94852.40 },
+      { type: 'section', group: 'GDS', label: 'Gastos diversos' },
+      { group: 'GDS', date: '07/11/2025', doc: '45G27917', entity: 'Electro Flux, Lda', net1: 926.72, vat1: 148.28, total: 1075.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '18/11/2025', doc: '45G28081', entity: 'Electro Flux, Lda', net1: 637.93, vat1: 102.07, total: 740.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '20/11/2025', doc: '45G28132', entity: 'Electro Flux, Lda', net1: 3362.07, vat1: 537.93, total: 3900.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '12/11/2025', doc: '75G22568', entity: 'Electro Flux, Lda', net1: 1724.14, vat1: 275.86, total: 2000.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '21/11/2025', doc: '001164-2025', entity: 'Premier superpar', net1: 28258.00, vat1: 4520.97, total: 32777.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '22/11/2025', doc: 'VD 2-0147', entity: 'FRESH, LDA', net1: 6506.03, vat1: 1040.97, total: 7547.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '13/11/2025', doc: 'VD 12581', entity: 'Cominfo Supermercado', net1: 1283.62, vat1: 205.38, total: 1489.00, expense: 'Equipamento / ferramentas' },
+      { group: 'GDS', date: '27/11/2025', doc: 'VD 56584', entity: 'Ferragem choupal', net1: 9761.21, vat1: 1561.79, total: 11323.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '19/11/2025', doc: 'VD 8812/MPI25', entity: 'Vazuluz', net1: 2780.17, vat1: 444.83, total: 3225.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '28/11/2025', doc: 'VD 001299', entity: 'MDS LOGISTIC & TRANSPORT', net1: 8275.86, vat1: 1324.14, total: 9600.00, expense: 'Material de Manutencao', observation: 'E inventario??' },
+      { group: 'GDS', date: '24/11/2025', doc: 'VD 56733', entity: 'KBS INTERNATIONAL', net1: 4482.76, vat1: 717.24, total: 5200.00, expense: 'Material de Manutencao' },
+      { group: 'GDS', date: '08/11/2025', doc: 'FT 2025110251054', entity: 'Builders', net1: 3299.66, vat1: 527.94, total: 3827.56, expense: 'Material de Manutencao' },
+      { type: 'subtotal', group: 'Sub-total', net1: 158385.74, vat1: 25341.72, total: 183727.45 },
+      { type: 'section', group: 'Activos tangiveis', label: 'Activos tangiveis' },
+      { group: 'Activos tangiveis', date: '27/11/2025', doc: 'VD 56584', entity: 'Ferragem choupal', net1: 9761.21, vat1: 1561.79, total: 11323.00, expense: 'Equip. Basico / Consumiveis' },
+      { group: 'Activos tangiveis', date: '21/11/2025', doc: 'VD 001687', entity: 'Panavision', net1: 3850.00, vat1: 616.00, total: 4466.00, expense: 'Equip. Basico / Cabo' },
+      { group: 'Activos tangiveis', date: '27/11/2025', doc: 'VD 1688', entity: 'PANAVISION MOCAMBIQUE', net1: 7700.00, vat1: 1232.00, total: 8932.00, expense: 'Equip. Basico / Cabo' },
+      { group: 'Activos tangiveis', date: '15/11/2025', doc: 'VD 044717', entity: 'REPRESENTACOES', net1: 5853.45, vat1: 936.55, total: 6790.00, expense: 'Equip. Admin / Celular' },
+      { type: 'subtotal', group: 'Sub-total', net1: 27164.66, vat1: 4346.34, total: 31511.00 },
+      { type: 'section', group: 'Liquidado', label: 'Vendas / IVA liquidado' },
+      { group: 'Liquidado', date: '13/11/2025', doc: 'FT 0036/2025', entity: 'Taha Hotel', net1: 30000.00, vat1: 4800.00, total: 34800.00 },
+      { group: 'Liquidado', date: '03/11/2025', doc: 'FT 0035/2025', entity: 'Whasinhanac SA', net1: 38793.10, vat1: 6206.90, total: 45000.00 },
+      { group: 'Liquidado', date: '03/11/2025', doc: 'FT 0034/2025', entity: 'Whasinhanac SA', net1: 12931.03, vat1: 2068.97, total: 15000.00 },
+      { type: 'subtotal', group: 'Sub-total', net1: 81724.14, net2: 0, vat1: 13075.86, vat2: 0, total: 94800.00 },
+      { type: 'tax', group: 'IVA Apuramento', net1: 0, vat1: 42771.16, vat2: 13076.88 },
+      { type: 'tax', group: 'IVA a recuperar do periodo anterior', net1: 0, vat2: 0 },
+      { type: 'tax', group: 'IVA a pagar', net1: 0, vat2: 0 },
+      { type: 'tax', group: 'Credito de imposto', net1: 0, vat2: 29696.28 },
+    ],
     observation: 'Primeiro mes carregado. Valores resumidos a partir da folha de novembro de 2025.',
   },
   { id: '2025-12', label: 'Dezembro 2025', hasData: false },
@@ -76,6 +114,11 @@ const formatMoney = (value) => `${value.toLocaleString('pt-PT', {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
 })} MT`;
+
+const formatSheetMoney = (value) => (Number.isFinite(value) ? value.toLocaleString('pt-PT', {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+}) : '');
 
 const toBase64 = (buffer) => {
   const bytes = new Uint8Array(buffer);
@@ -134,6 +177,7 @@ const renderFinancialMonth = (monthId) => {
     vatCreditDetail.textContent = '0,00 MT';
     monthlyObservation.textContent = `Ainda nao foram adicionados valores para ${month.label}.`;
     monthlyCategoryRows.innerHTML = '<tr><td colspan="4" class="text-center text-muted">Sem movimentos registados para este mes.</td></tr>';
+    monthlySheetRows.innerHTML = '<tr><td colspan="13" class="empty-sheet-cell">Sem folha detalhada para este mes.</td></tr>';
     return;
   }
 
@@ -157,6 +201,63 @@ const renderFinancialMonth = (monthId) => {
       <td class="text-end">${formatMoney(category.total)}</td>
     </tr>
   `).join('');
+  monthlySheetRows.innerHTML = month.sheetRows.map((row) => {
+    if (row.type === 'section') {
+      return `
+        <tr class="sheet-section-row">
+          <td>${row.group}</td>
+          <td colspan="12">${row.label}</td>
+        </tr>
+      `;
+    }
+
+    if (row.type === 'subtotal') {
+      return `
+        <tr class="sheet-subtotal-row">
+          <td>${row.group}</td>
+          <td colspan="4"></td>
+          <td class="sheet-number">${formatSheetMoney(row.net1)}</td>
+          <td class="sheet-number">${formatSheetMoney(row.net2)}</td>
+          <td class="sheet-number">${formatSheetMoney(row.vat1)}</td>
+          <td class="sheet-number">${formatSheetMoney(row.vat2)}</td>
+          <td class="sheet-number">${formatSheetMoney(row.total)}</td>
+          <td colspan="3"></td>
+        </tr>
+      `;
+    }
+
+    if (row.type === 'tax') {
+      return `
+        <tr class="sheet-tax-row">
+          <td>${row.group}</td>
+          <td colspan="4"></td>
+          <td class="sheet-number">${formatSheetMoney(row.net1)}</td>
+          <td class="sheet-number">${formatSheetMoney(row.net2)}</td>
+          <td class="sheet-number">${formatSheetMoney(row.vat1)}</td>
+          <td class="sheet-number">${formatSheetMoney(row.vat2)}</td>
+          <td colspan="4"></td>
+        </tr>
+      `;
+    }
+
+    return `
+      <tr>
+        <td>${row.group || ''}</td>
+        <td>${row.date || ''}</td>
+        <td>${row.doc || ''}</td>
+        <td>${row.entity || ''}</td>
+        <td>${row.nif || ''}</td>
+        <td class="sheet-number">${formatSheetMoney(row.net1)}</td>
+        <td class="sheet-number">${formatSheetMoney(row.net2)}</td>
+        <td class="sheet-number">${formatSheetMoney(row.vat1)}</td>
+        <td class="sheet-number">${formatSheetMoney(row.vat2)}</td>
+        <td class="sheet-number">${formatSheetMoney(row.total)}</td>
+        <td>${row.expense || ''}</td>
+        <td>${row.observation || ''}</td>
+        <td>${row.status || ''}</td>
+      </tr>
+    `;
+  }).join('');
 };
 
 const setupFinancialMonths = () => {
